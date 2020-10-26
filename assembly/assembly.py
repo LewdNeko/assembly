@@ -363,7 +363,7 @@ class Assembly(object):
 
     @classmethod
     def _load_view_from_string__(cls, view):
-        werkzeug.import_string(view)
+        werkzeug.utils.import_string(view)
         _register_application_template(view, view)
 
     @classmethod
