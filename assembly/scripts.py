@@ -14,7 +14,7 @@ from . import utils
 import pkg_resources
 from . import about
 from .assembly import db
-from werkzeug import import_string
+from werkzeug.utils import import_string
 
 CWD = os.getcwd()
 SKELETON_DIR = "scaffold"
