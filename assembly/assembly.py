@@ -320,7 +320,7 @@ class Assembly(object):
         cls._setup_db__(app)
 
         # Load models implicitely from lib.models
-        werkzeug.import_string("lib.models", True)
+        werkzeug.utils.import_string("lib.models", True)
 
         # Load views
         try:           
