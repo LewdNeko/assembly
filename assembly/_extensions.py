@@ -14,6 +14,7 @@ import flask_mail
 import ses_mailer
 import flask_login
 import flask_kvsession
+import flask_openid
 from jinja2 import Markup
 from jinja2.ext import Extension
 from urllib.parse import urlparse
@@ -22,6 +23,14 @@ from jinja2 import TemplateSyntaxError
 from . import (ext, config, app_context, utils)
 from jinja2.lexer import Token, describe_token
 from flask import (request, current_app, send_file, session)
+
+# ---- Flask OpenID ----
+
+ext.openid = OpenID(fs_store_path=os.path.join(os.path.dirname(__file__), 'openid_store')
+
+@app_context
+def flask_openid_init(app):
+    ext.openid.init_app(app)
 
 # ------------------------------------------------------------------------------
 @app_context
