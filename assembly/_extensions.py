@@ -26,7 +26,7 @@ from flask import (request, current_app, send_file, session)
 
 # ---- Flask OpenID ----
 
-ext.openid = OpenID(fs_store_path=os.path.join(os.path.dirname(__file__), 'openid_store')
+ext.openid = OpenID(fs_store_path=os.path.join(os.path.dirname(__file__), 'openid_store'))
 
 @app_context
 def flask_openid_init(app):
